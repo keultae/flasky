@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,7 +9,7 @@ def student():
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
    if request.method == 'POST':
-      result = request.form
+      result = request.form # 딕셔너리 포맷
       return render_template("result.html",result = result)
 
 if __name__ == '__main__':

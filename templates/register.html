@@ -1,0 +1,18 @@
+<form action = "http://localhost:5000/register" method = "POST">
+<table>
+{% for field in form %}
+    <tr>
+    {% if field.type == "BooleanField" %}
+        <td></td>
+        <td>{{ field }} {{ field.label }}</td>
+    {% elif field.type == "SubmitField" %}
+        <td></td>
+        <td>{{ field }}</td>
+    {% else %}
+        <td>{{ field.label }}</td>
+        <td>{{ field }}</td>
+    {% endif %}
+    </tr>
+{% endfor %}
+</table>
+</form>
